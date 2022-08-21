@@ -43,7 +43,7 @@ foreach($key['line_items'] as $lineitems){
 
 //Put those variables into an array to post to CRM
 
-$arrayForRocketfuel = array('email' => $email, 'phone' => $phone, 'firstName' => $firstName, 'lastName' => $lastName, 'address1' => $address, 'city' => $city, 'state' => $state, 'type' => $customerType, 'tags' => $tags);
+$arrayForCRM = array('email' => $email, 'phone' => $phone, 'firstName' => $firstName, 'lastName' => $lastName, 'address1' => $address, 'city' => $city, 'state' => $state, 'type' => $customerType, 'tags' => $tags);
 
 //set up the new connection then encode the array so that rocketfuel detects it as json
 
@@ -55,10 +55,10 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS => json_encode($arrayForRocketfuel),
+  CURLOPT_POSTFIELDS => json_encode($arrayForCRM),
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json',
-    'Authorization: Bearer ef8dccc0-0099-4549-8233-1167ac989a89'
+    'Authorization: Bearer api key here'
   ),
 ));
 $response2 = curl_exec($curl);
