@@ -3,7 +3,7 @@
 add_action( 'woocommerce_payment_complete', 'so_payment_complete' );
 function so_payment_complete(){
 
-$ch = curl_init("https://www.prospernutrition.com/wp-json/wc/v2/orders");
+$ch = curl_init("https://www.wordpressite.com/wp-json/wc/v2/orders");
 $headers[]  = 'Content-Type: application/json';
 
 curl_setopt($ch, CURLOPT_HEADER, 0);
